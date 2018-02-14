@@ -16,7 +16,24 @@ public class TableauFormeGeometrique{
     }
 
     public void tri(){
-        double
+        double[] tab;
+        int len = tabFormeGeometrique.length;
+        tab = new double[len];
+        double buffDouble;
+        FormeGeometrique buffForme;
+        for(int i = 0; i<len; i++) tab[i] = tabFormeGeometrique[i].calculSuperficie();
+        for(int i = 0; i<len; i++){
+            for(int j = 0; j<len-1; j++){
+                if(tab[j]>tab[j+1]){
+                    buffDouble = tab[j];
+                    tab[j] = tab[j+1];
+                    tab[j+1] = buffDouble;
+                    buffForme = tabFormeGeometrique[j];
+                    tabFormeGeometrique[j] = tabFormeGeometrique[j+1];
+                    tabFormeGeometrique[j+1] = buffForme;
+                }
+            }
+        }
     }
     public String toString(){
         String str = "";
