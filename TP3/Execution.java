@@ -21,14 +21,14 @@ public class Execution{
         personne[2].setAge(23);
         personne[2].setNom("Thomash");
         personne[2].setPrenom("Axel");
-        personne[2].setPromotion("6A MDD");
-        personne[2].setNbAbsences(2);
+        ((Etudiant) personne[2]).setPromotion("6A MDD");
+        ((Etudiant) personne[2]).setNbAbsences(2);
 
         personne[1].setAge(21);
         personne[1].setNom("Thomas");
         personne[1].setPrenom("Kevin");
-        personne[1].setPromotion("4A MDD");
-        personne[1].setNbAbsences(5);
+        ((Etudiant) personne[1]).setPromotion("4A MDD");
+        ((Etudiant) personne[1]).setNbAbsences(5);
 
         System.out.println(personne[1] + "\n");
         System.out.println(personne[2] + "\n");
