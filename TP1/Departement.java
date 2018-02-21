@@ -11,31 +11,31 @@ public class Departement{
 	*/
 	public Departement(String nom, int numero, int nb) {
 		super();
-    this.nbVillesSaisies = 0;
-    this.nom = nom;
-    this.numero = numero;
-    this.nbVilles = nb;
-    tabVilles = new Ville[this.nbVilles];
+	    this.nbVillesSaisies = 0;
+	    this.nom = nom;
+	    this.numero = numero;
+	    this.nbVilles = nb;
+	    tabVilles = new Ville[this.nbVilles];
 	}
 
 	public void ajouterVille(Ville ville){
 		if (this.nbVillesSaisies < this.nbVilles){
-		//On regarde maintenant si la ville est deja presente dans le departement
-		boolean estDejaDansDepartement = false;
-		int i = 0;
-		while(i < this.nbVillesSaisies && !estDejaDansDepartement){
-			if(ville.estIdentiqueA(tabVilles[i]))
-				estDejaDansDepartement = true;
-			i++;
-		}
-
-		//On ajoute la ville
-		if(!estDejaDansDepartement){
-			this.tabVilles[this.nbVillesSaisies] = ville;
-			this.nbVillesSaisies+=1;
-		}
-		else
-			System.out.println(ville.getNom() + " est deja dans " + this.nom);
+			//On regarde maintenant si la ville est deja presente dans le departement
+			boolean estDejaDansDepartement = false;
+			int i = 0;
+			while(i < this.nbVillesSaisies && !estDejaDansDepartement){
+				if(ville.estIdentiqueA(tabVilles[i]))
+					estDejaDansDepartement = true;
+				i++;
+			}
+	
+			//On ajoute la ville
+			if(!estDejaDansDepartement){
+				this.tabVilles[this.nbVillesSaisies] = ville;
+				this.nbVillesSaisies+=1;
+			}
+			else
+				System.out.println(ville.getNom() + " est deja dans " + this.nom);
 		}
 		else{
 			System.out.println("Il n'y a plus de place pour rajouter une ville dans " + this.nom);
@@ -46,7 +46,7 @@ public class Departement{
 		String texte = "";
 		texte += "Villes du département "+ this.nom + " (" + this.numero + ") :\n";
 		for(int i = 0; i<nbVillesSaisies; i++){
-		  texte += (i+1) + ". " + this.tabVilles[i] + "\n";
+			texte += (i+1) + ". " + this.tabVilles[i] + "\n";
 		}
 		return texte;
 	}
@@ -60,6 +60,7 @@ public class Departement{
 			sontIdentiques = false;
 		}
 		else{
+			//Si l'un des deux departement ne contient pas l'autre, alors ils ne sont pas identiques
 			if(!(this.estContenuDans(departement) && departement.estContenuDans(this)))
 				sontIdentiques = false;
 		}
