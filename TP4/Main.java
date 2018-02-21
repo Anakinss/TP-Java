@@ -1,5 +1,6 @@
 public class Main{
     public static void main(String args[]){
+    	//Initialisation des objets
         FormeGeometrique forme1;
         FormeGeometrique forme2;
         Rectangle formeR = new Rectangle(1,4,3);
@@ -8,6 +9,8 @@ public class Main{
         Rectangle formeR3 = new Rectangle(1,6,7);
 
         Cercle formeC = new Cercle(2,1);
+
+        //Instruction
         System.out.println(formeR);
         System.out.println(formeC);
         TableauFormeGeometrique tab;

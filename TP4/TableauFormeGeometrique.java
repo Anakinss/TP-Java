@@ -6,6 +6,7 @@ public class TableauFormeGeometrique{
         tabFormeGeometrique = new FormeGeometrique[nbFormeGeometriqueMax];
     }
 
+    //Retourne 1 si l'objet est ajoute, -1 sinon
     public int ajouterForme(FormeGeometrique obj){
         if(nbFormeGeometrique < tabFormeGeometrique.length){
             tabFormeGeometrique[nbFormeGeometrique] = obj;
@@ -20,11 +21,14 @@ public class TableauFormeGeometrique{
         int len = tabFormeGeometrique.length;
         tab = new double[len];
         double buffDouble;
+        
         FormeGeometrique buffForme;
         for(int i = 0; i<len; i++) tab[i] = tabFormeGeometrique[i].calculSuperficie();
+        
         for(int i = 0; i<len; i++){
             for(int j = 0; j<len-1; j++){
                 if(tab[j]>tab[j+1]){
+                	//Inversion des formes et des superficies correspondantes
                     buffDouble = tab[j];
                     tab[j] = tab[j+1];
                     tab[j+1] = buffDouble;
@@ -35,6 +39,8 @@ public class TableauFormeGeometrique{
             }
         }
     }
+    
+    
     public String toString(){
         String str = "";
         for(int i = 0; i<nbFormeGeometrique; i++) str+= tabFormeGeometrique[i] +"\n";
