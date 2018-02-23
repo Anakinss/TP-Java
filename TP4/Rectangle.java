@@ -1,11 +1,7 @@
-public class Rectangle extends FormeGeometrique{
-    private double longueur;
-    private double largeur;
+public class Rectangle extends Quadrilatere{
 
     Rectangle(double epaisseurTrait,double longueur, double largeur){
-        super(epaisseurTrait);
-        this.longueur = longueur;
-        this.largeur = largeur;
+        super(epaisseurTrait, longueur, largeur);
     }
     
     public double calculPerimetre(){
